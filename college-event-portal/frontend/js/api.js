@@ -2,68 +2,73 @@
 // Central place to configure the backend URL.
 // Change this if your backend runs on a different host/port.
 // ============================================================
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://college-event-portal-76ru.onrender.com/api";
 
 // ---------- Token / user storage ----------
 function getToken() { return localStorage.getItem("cea_token"); }
+
 function getUser() {
-  const raw = localStorage.getItem("cea_user");
-  return raw ? JSON.parse(raw) : null;
+    const raw = localStorage.getItem("cea_user");
+    return raw ? JSON.parse(raw) : null;
 }
+
 function saveSession(token, user) {
-  localStorage.setItem("cea_token", token);
-  localStorage.setItem("cea_user", JSON.stringify(user));
+    localStorage.setItem("cea_token", token);
+    localStorage.setItem("cea_user", JSON.stringify(user));
 }
+
 function clearSession() {
-  localStorage.removeItem("cea_token");
-  localStorage.removeItem("cea_user");
+    localStorage.removeItem("cea_token");
+    localStorage.removeItem("cea_user");
 }
+
 function isLoggedIn() { return !!getToken(); }
+
 function isAdmin() {
-  const u = getUser();
-  return u && u.role === "admin";
+    const u = getUser();
+    return u && u.role === "admin";
 }
 
 // ---------- Generic fetch wrapper ----------
 async function apiRequest(path, { method = "GET", body, auth = false } = {}) {
-  const headers = { "Content-Type": "application/json" };
-  if (auth) {
-    const token = getToken();
-    if (token) headers["Authorization"] = `Bearer ${token}`;
-  }
-
-  let res;
-  try {
-    res = await fetch(`${API_BASE}${path}`, {
-      method,
-      headers,
-      body: body ? JSON.stringify(body) : undefined,
-    });
-  } catch (err) {
-    throw new Error("Could not reach the server. Is the backend running?");
-  }
-
-  const data = await res.json().catch(() => ({}));
-
-  if (!res.ok) {
-    // Session expired / invalid token -> force logout
-    if (res.status === 401 && auth) {
-      clearSession();
+    const headers = { "Content-Type": "application/json" };
+    if (auth) {
+        const token = getToken();
+        if (token) headers["Authorization"] = `Bearer ${token}`;
     }
-    throw new Error(data.message || "Something went wrong.");
-  }
 
-  return data;
+    let res;
+    try {
+        res = await fetch(`${API_BASE}${path}`, {
+            method,
+            headers,
+            body: body ? JSON.stringify(body) : undefined,
+        });
+    } catch (err) {
+        throw new Error("Could not reach the server. Is the backend running?");
+    }
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+        // Session expired / invalid token -> force logout
+        if (res.status === 401 && auth) {
+            clearSession();
+        }
+        throw new Error(data.message || "Something went wrong.");
+    }
+
+    return data;
 }
 
 // ---------- Shared navbar rendering ----------
 function renderNavbar() {
-  const slot = document.getElementById("navUserSlot");
-  if (!slot) return;
+    const slot = document.getElementById("navUserSlot");
+    if (!slot) return;
 
-  if (isLoggedIn()) {
-    const user = getUser();
-    slot.innerHTML = `
+    if (isLoggedIn()) {
+        const user = getUser();
+        slot.innerHTML = `
       <span id="navGreeting">Hi, ${escapeHtml(user.name.split(" ")[0])}</span>
       ${user.role === "admin" ? `<a href="admin.html" class="btn btn-ghost">Admin Panel</a>` : `<a href="dashboard.html" class="btn btn-ghost">My Events</a>`}
       <button class="btn btn-danger" id="logoutBtn">Log out</button>
