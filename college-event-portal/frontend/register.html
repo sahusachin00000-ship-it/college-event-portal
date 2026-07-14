@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — CampusArena</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="stub-dot"></span> CampusArena</a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="events.html">Events</a></div>
+    <div class="nav-user" id="navUserSlot"></div>
+  </div>
+</nav>
+
+<div class="auth-shell">
+  <div class="card">
+    <h2>Create your account</h2>
+    <p class="sub">Sign up to start registering for college events.</p>
+
+    <div class="alert alert-error" id="errorAlert"></div>
+
+    <form id="registerForm">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" required placeholder="Anjali Sharma">
+      </div>
+      <div class="field">
+        <label for="email">College email</label>
+        <input type="email" id="email" required placeholder="you@college.edu">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="rollNumber">Roll number</label>
+          <input type="text" id="rollNumber" placeholder="21CS045">
+        </div>
+        <div class="field">
+          <label for="department">Department</label>
+          <input type="text" id="department" placeholder="CSE">
+        </div>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="At least 6 characters">
+      </div>
+      <div class="field">
+        <label for="adminCode">Organiser code <span style="color:var(--muted); font-weight:400;">(only if you're setting up events — leave blank otherwise)</span></label>
+        <input type="text" id="adminCode" placeholder="Optional">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Create account</button>
+    </form>
+
+    <div class="form-footer">
+      Already have an account? <a href="login.html">Log in</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

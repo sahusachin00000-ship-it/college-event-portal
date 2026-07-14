@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "user_1783982132464_8299",
+      "name": "ankit gupta",
+      "email": "ankitg1850@gmail.com",
+      "passwordHash": "$2a$10$1AqQJvJLM/PhWjqRzmL5FO2mcqep3FiE2XWEtlSz3ymPRh3.nXVH.",
+      "rollNumber": "2303830100023",
+      "department": "CSE",
+      "role": "student",
+      "createdAt": "2026-07-13T22:35:32.464Z"
+    },
+    {
+      "id": "user_1783982594694_4906",
+      "name": "GUPTA JII",
+      "email": "sahusachin00000@gmail.com",
+      "passwordHash": "$2a$10$D7ZNM1h.wWOw0/6XOzWt9Ojnt52Qvr3aKFOr2.5AD0LMpsPC84YhG",
+      "rollNumber": "123123",
+      "department": "CSE",
+      "role": "admin",
+      "createdAt": "2026-07-13T22:43:14.694Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt1",
+      "title": "Code Sprint 2026",
+      "description": "A 3-hour competitive programming sprint. Solve algorithmic problems and climb the leaderboard.",
+      "category": "Technical",
+      "date": "2026-08-05",
+      "time": "10:00",
+      "venue": "Computer Lab 2",
+      "maxParticipants": 60,
+      "createdBy": "system",
+      "status": "open"
+    },
+    {
+      "id": "evt2",
+      "title": "Campus Football 5-a-side",
+      "description": "Knockout football tournament between department teams. Register your squad.",
+      "category": "Sports",
+      "date": "2026-08-10",
+      "time": "16:00",
+      "venue": "Main Ground",
+      "maxParticipants": 80,
+      "createdBy": "system",
+      "status": "open"
+    },
+    {
+      "id": "evt3",
+      "title": "Battle of Bands",
+      "description": "Live music competition open to solo artists and bands. Bring your own instruments.",
+      "category": "Cultural",
+      "date": "2026-08-15",
+      "time": "18:30",
+      "venue": "Open Air Theatre",
+      "maxParticipants": 40,
+      "createdBy": "system",
+      "status": "open"
+    },
+    {
+      "id": "evt_1783982762675_1697",
+      "title": "T20",
+      "description": "I LUV UH",
+      "category": "Sports",
+      "date": "2026-08-09",
+      "time": "10:00",
+      "venue": "COLLEGE GROUND",
+      "maxParticipants": 30,
+      "createdBy": "user_1783982594694_4906",
+      "status": "open",
+      "createdAt": "2026-07-13T22:46:02.675Z"
+    }
+  ],
+  "registrations": [
+    {
+      "id": "reg_1783982158748_7450",
+      "eventId": "evt2",
+      "userId": "user_1783982132464_8299",
+      "registeredAt": "2026-07-13T22:35:58.748Z"
+    }
+  ]
+}

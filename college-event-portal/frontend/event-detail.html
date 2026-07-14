@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details — CampusArena</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><span class="stub-dot"></span> CAMPUS Events</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+            </div>
+            <div class="nav-user" id="navUserSlot"></div>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 48px;">
+        <div class="container" style="max-width: 760px;">
+            <div id="alertBox" class="alert"></div>
+            <div id="eventDetailBody">
+                <p style="color: var(--muted);">Loading event…</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>Built for college fests &amp; sports meets · CampusArena</footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/event-detail.js"></script>
+</body>
+
+</html>

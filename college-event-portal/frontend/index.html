@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusArena — College Event Portal</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="stub-dot"></span> CampusArena</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="events.html">Events</a>
+    </div>
+    <div class="nav-user" id="navUserSlot"></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Registrations open for August fest</div>
+    <h1>One portal for every college event. Games, tech, culture — pick your ticket.</h1>
+    <p class="lead">Browse events your college is hosting, reserve your spot in a click, and track everything you've signed up for in one place.</p>
+    <div class="hero-actions">
+      <a href="events.html" class="btn btn-primary">Browse events</a>
+      <a href="register.html" class="btn btn-ghost">Create student account</a>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat"><div class="num" id="statEvents">—</div><div class="label">Live events</div></div>
+      <div class="stat"><div class="num" id="statSpots">—</div><div class="label">Open spots</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Categories</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="margin-bottom: 6px;">Happening soon</h2>
+    <p style="color: var(--muted); margin-bottom: 28px;">The next events on the calendar.</p>
+    <div class="grid" id="upcomingGrid">
+      <p style="color: var(--muted);">Loading events…</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built for college fests &amp; sports meets · CampusArena
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

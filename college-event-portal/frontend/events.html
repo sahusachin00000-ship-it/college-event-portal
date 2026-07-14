@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Events — CampusArena</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="stub-dot"></span> CampusArena</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="events.html" class="active">Events</a>
+    </div>
+    <div class="nav-user" id="navUserSlot"></div>
+  </div>
+</nav>
+
+<section class="section" style="padding-top: 48px;">
+  <div class="container">
+    <h1 style="font-size: 2rem;">All events</h1>
+    <p style="color: var(--muted); margin-bottom: 32px;">Filter by category or search for something specific.</p>
+
+    <div class="filter-row">
+      <input type="text" class="search-box" id="searchInput" placeholder="Search events…">
+      <button class="chip active" data-category="All">All</button>
+      <button class="chip" data-category="Technical">Technical</button>
+      <button class="chip" data-category="Sports">Sports</button>
+      <button class="chip" data-category="Cultural">Cultural</button>
+    </div>
+
+    <div class="grid" id="eventsGrid">
+      <p style="color: var(--muted);">Loading events…</p>
+    </div>
+  </div>
+</section>
+
+<footer>Built for college fests &amp; sports meets · CampusArena</footer>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/events.js"></script>
+</body>
+</html>
